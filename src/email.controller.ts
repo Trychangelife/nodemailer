@@ -7,6 +7,7 @@ export class EmailController {
 
   @Get('send')
   async sendTestEmail(@Query('to') to: string) {
-    return this.emailService.sendTestEmail(to);
+    console.log("Попали в контроллер sendTestEmail, дальше будем коннектится к emailService");
+    return await this.emailService.sendTestEmail(to);
   }
 }
